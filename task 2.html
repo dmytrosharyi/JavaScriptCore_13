@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .external-red {
+            background-color: red
+        };
+      </style>
+</head>
+
+<body>
+    <button type="button" name="button" id="bttn">Press to highlight external links</button>
+    <br>
+    <a name="list">Web-sites list</a>
+    <ul>
+        <li><a href="http://google.com">http://google.com</a></li>
+        <li><a href="/tutorial">/tutorial.html</a></li>
+        <li><a href="local/path">local/path</a></li>
+        <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+        <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+        <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+    </ul>
+ </body>
+<script>
+    document.getElementById('bttn').onclick = function() {
+        var links = document.getElementsByTagName('li');
+        for (let li of links) {
+            if (li.getElementsByTagName('a')[0].href.indexOf('http://internal') + 1 != 0) {
+                0;
+            } else if (li.getElementsByTagName('a')[0].href.indexOf('http://') + 1 != 0) {
+                li.className = 'external-red';
+            } else if (li.getElementsByTagName('a')[0].href.indexOf('ftp://') + 1 != 0) {
+                li.className = 'external-red';
+            }
+        }
+    }
+</script>
+</html>
